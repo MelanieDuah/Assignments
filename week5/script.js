@@ -96,8 +96,8 @@ function showResults(showTimeUp) {
   resultHtml += '<span>' + totalScore + ' out of ' + quizQuestions.length + '</span>';
   resultHtml += '</div> </div>';
   resultHtml += '<div class="row "><div class="col-md-12 d-flex justify-content-center"><div class="form-group form-inline">';
-  resultHtml += '<label for="inputInitial">Enter Initials:</label><input type="text" id="inputInitial" class="form-control mx-sm-3"';
-  resultHtml += 'aria-describedby="passwordHelpInline"></div><button class="btn btn-primary mb-2">Submit</button></div></div>';
+  resultHtml += '<label for="inputInitial">Enter Initials:</label><input type="text" id="inputInitial" class="form-control"';
+  resultHtml += '></div><button class="btn btn-primary">Submit</button></div></div>';
 
   $("#maincontainer").html(resultHtml);
 
@@ -107,7 +107,8 @@ function showResults(showTimeUp) {
 
 function processHighScores(totalScore) {
   var initials = $("#inputInitial").val();
-  var existingScoresStorageItem = localStorage.getItem(initials);
+  if(initials != ''){
+    var existingScoresStorageItem = localStorage.getItem(initials);
 
   var highScore;
 
@@ -123,6 +124,10 @@ function processHighScores(totalScore) {
   }
 
   showHighScores(initials, highScore);
+  }else{
+    alert("Enter a value for initials");
+  }
+  
 }
 
 function showHighScores(initials, highScore) {
@@ -158,7 +163,7 @@ function updateTimer() {
     var minutes = Math.floor(seconds / 60);
     var secondsToDisplay = seconds - (minutes * 60);
 
-    $("#countDown").html(minutes + " : " + secondsToDisplay);
+    $("#countDown").html(minutes + " : " + secondsToDisplay.toString().padStart(2,'0'));
   }
 
   return seconds;
