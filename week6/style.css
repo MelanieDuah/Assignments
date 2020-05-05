@@ -1,0 +1,35 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  padding: 10px;
+}
+#currentDay{
+  padding: 20px;
+ 
+}
+
+.maincolumn{
+  width: 90%;
+}
+
+.present{
+  background-color:rgba(71, 181, 255, 0.589);
+}
+
+.past{
+  background-color:rgb(231, 241, 241);
+}
+
+.future{
+  background-color: rgb(125, 175, 113);
+}
+
+input[type="text"]{
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+
