@@ -1,0 +1,36 @@
+
+.weather{
+    border: 1px solid lightgrey;
+}
+
+.low{
+    background-color: lime;
+}
+
+.moderate{
+    background-color: yellow;
+}
+
+.high{
+    background-color: orangered;
+}
+
+.veryhigh{
+    background-color: purple;
+}
+
+.extreme{
+    background-color: royalblue;
+}
+.weatherDisplay{
+    width:100%;
+    border: 1px solid lightgrey;
+    height:100%;
+    background-color: rgb(0, 183, 255);
+}
+.buttonSearch{
+    background-color: rgb(0, 183, 255) ;
+}
+.temp{
+    font-size:small;
+}
