@@ -89,47 +89,50 @@ function onWeatherInformationReturned(response, cityObject) {
 
 function addCityToSearchHistory(cityObject) {
 
-  localStorage.setItem('latitude', cityObject.lat);
-  localStorage.setItem('longitude', cityObject.lng);
-  localStorage.setItem('cityname', cityObject.city);
+  if ($("td:contains(" + cityObject.city + ")").length == 0) {
+    
+    localStorage.setItem('latitude', cityObject.lat);
+    localStorage.setItem('longitude', cityObject.lng);
+    localStorage.setItem('cityname', cityObject.city);
 
-  var existingCitiesStorage = localStorage.getItem('savedcities');
+    var existingCitiesStorage = localStorage.getItem('savedcities');
 
-  var savedCities = '';
+    var savedCities = '';
 
-  if (existingCitiesStorage != null) {
-    savedCities = existingCitiesStorage;
-    var savedCitiesArray = savedCities.split('|');
-    if (savedCitiesArray.length == 8) {
-      savedCitiesArray.splice(7, 1);
-      savedCities = savedCitiesArray.join('|');
+    if (existingCitiesStorage != null) {
+      savedCities = existingCitiesStorage;
+      var savedCitiesArray = savedCities.split('|');
+      if (savedCitiesArray.length == 9) {
+        savedCitiesArray.splice(6, 1);
+        savedCities = savedCitiesArray.join('|');
+      }
     }
+
+    savedCities += cityObject.city + '&' + cityObject.lat + '&' + cityObject.lng + '|';
+
+    localStorage.setItem('savedcities', savedCities);
+
+    var rowString = "<tr><td data-lat='" + cityObject.lat + "' data-lng='" + cityObject.lng + "' class='cityinhistory text-light'>" + cityObject.city + "</td></<tr>";
+
+    if ($('#tableRows').children().length == 0)
+      $('#tableRows').append(rowString);
+    else
+      $('#tableRows > tr:first').before(rowString);
+
+    if ($('#tableRows').children().length > 8)
+      $('#tableRows').children().last().remove();
+
+    $('.cityinhistory').on('click', function () {
+
+      var latitude = $(this).attr('data-lat');
+      var longitude = $(this).attr('data-lng');
+      var cityValue = $(this).html();
+
+      var cityObject = { lat: latitude, lng: longitude, city: cityValue };
+
+      showWeatherConditions(cityObject);
+    });
   }
-
-  savedCities += cityObject.city + '&' + cityObject.lat + '&' + cityObject.lng + '|';
-
-  localStorage.setItem('savedcities', savedCities);
-
-  var rowString = "<tr><td data-lat='" + cityObject.lat + "' data-lng='" + cityObject.lng + "' class='cityinhistory'>" + cityObject.city + "</td></<tr>";
-
-  if ($('#tableRows').children().length == 0)
-    $('#tableRows').append(rowString);
-  else
-    $('#tableRows > tr:first').before(rowString);
-
-  if ($('#tableRows').children().length > 8)
-    $('#tableRows').children().last().remove();
-
-  $('.cityinhistory').on('click', function () {
-
-    var latitude = $(this).attr('data-lat');
-    var longitude = $(this).attr('data-lng');
-    var cityValue = $(this).html();
-
-    var cityObject = { lat: latitude, lng: longitude, city: cityValue };
-
-    showWeatherConditions(cityObject);
-  });
 }
 
 function convertKelvinIntoFahrenheit(kelvin) {

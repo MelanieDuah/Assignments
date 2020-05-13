@@ -83,7 +83,7 @@ function showSavedCities() {
             if (cityEntry != '') {
                 var cityData = cityEntry.split('&');
 
-                var rowString = "<tr><td data-lat='" + cityData[1] + "' data-lng='" + cityData[2] + "' class='cityinhistory'>" + cityData[0] + "</td></<tr>";
+                var rowString = "<tr><td data-lat='" + cityData[1] + "' data-lng='" + cityData[2] + "' class='cityinhistory text-light'>" + cityData[0] + "</td></<tr>";
 
                 if ($('#tableRows').children().length == 0)
                     $('#tableRows').append(rowString);

@@ -16,10 +16,10 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 text-light d-flex justify-content-center bg-dark">
+            <div class="col-md-12 text-light d-flex justify-content-center">
                 <div id="heading">
                     <span>
-                        <h1>Weather Dashboard</h1>
+                        <h1>Weather</h1>
                     </span>
                 </div>
             </div>
@@ -30,11 +30,6 @@
                 <div class="input-group inptSearch">
                     <input type="text" class="form-control" id="searchInput" aria-label="Input group example"
                         aria-describedby="btnGroupAddon2">
-                    <div class="ml-2">
-                        <div class="fa-2x">
-                            <span class="d-none progress"><i class="fas fa-spinner fa-pulse"></i></span>
-                          </div>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 d-none">
@@ -87,143 +82,147 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 col-md-2 mx-2 weatherDisplay card d-flex flex-wrap" id="forecastDisplay">
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-2 mx-1">
-                                        <span class="d-none mr-2"></span>
-                                        <span class="mr-1" id="weatherDisplayDate0"></span>
+                            <div class=" col-md-12">
+                                <div class="d-flex flex-md-row flex-sm-colum justify-content-between card-deck">
+                                    <div class="weatherDisplay card text-wrap mr-2" id="forecastDisplay">
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-2 mx-1">
+                                                <span class="d-none mr-2"></span>
+                                                <span class="mr-1" id="weatherDisplayDate0"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-3 mx-1">
+                                                <span class="d-none mr-2"></span>
+                                                <span class="mr-1" id="weatherDisplayIcon0"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-1 mx-1 temp">
+                                                <span class="d-none">Temp:</span>
+                                                <span class="mr-1" id="weatherDisplayTemp0"></span>
+                                                <span class="d-none">&#8457;</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-1 mx-1 temp">
+                                                <span class="d-none">Humidity:</span>
+                                                <span class="mr-1" id="weatherDisplayHumid0"></span>
+                                                <span class="d-none">&#37;</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-3 mx-1">
-                                        <span class="d-none mr-2"></span>
-                                        <span class="mr-1" id="weatherDisplayIcon0"></span>
+                                    <div class="weatherDisplay card text-wrap  mr-2" id="secondforecastDisplay">
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-2 mx-1">
+                                                <span class="d-none mr-2"></span>
+                                                <span class="mr-1" id="weatherDisplayDate1"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-3 mx-1">
+                                                <span class="d-none mr-2"></span>
+                                                <span class="mr-1" id="weatherDisplayIcon1"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-1 mx-1 temp">
+                                                <span class="d-none">Temp:</span>
+                                                <span class="mr-1" id="weatherDisplayTemp1"></span>
+                                                <span class="d-none">&#8457;</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-1 mx-1 temp">
+                                                <span class="d-none">Humidity:</span>
+                                                <span class="mr-1" id="weatherDisplayHumid1"></span>
+                                                <span class="d-none">&#37;</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-1 mx-1 temp">
-                                        <span class="d-none">Temp:</span>
-                                        <span class="mr-1" id="weatherDisplayTemp0"></span>
-                                        <span class="d-none">&#8457;</span>
+                                    <div class=" weatherDisplay card text-wrap  mr-2" id="secondforecastDisplay">
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-2 mx-1">
+                                                <span class="d-none mr-2"></span>
+                                                <span class="mr-1" id="weatherDisplayDate2"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-3 mx-1">
+                                                <span class="d-none mr-2"></span>
+                                                <span class="mr-1" id="weatherDisplayIcon2"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-1 mx-1 temp">
+                                                <span class="d-none">Temp:</span>
+                                                <span class="mr-1" id="weatherDisplayTemp2"></span>
+                                                <span class="d-none">&#8457;</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-1 mx-1 temp">
+                                                <span class="d-none">Humidity:</span>
+                                                <span class="mr-1" id="weatherDisplayHumid2"></span>
+                                                <span class="d-none">&#37;</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-1 mx-1 temp">
-                                        <span class="d-none">Humidity:</span>
-                                        <span class="mr-1" id="weatherDisplayHumid0"></span>
-                                        <span class="d-none">&#37;</span>
+                                    <div class="weatherDisplay card text-wrap  mr-2" id="secondforecastDisplay">
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-2 mx-1">
+                                                <span class="d-none mr-2"></span>
+                                                <span class="mr-1" id="weatherDisplayDate3"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-3 mx-1">
+                                                <span class="d-none mr-2"></span>
+                                                <span class="mr-1" id="weatherDisplayIcon3"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-1 mx-1 temp">
+                                                <span class="d-none">Temp:</span>
+                                                <span class="mr-1" id="weatherDisplayTemp3"></span>
+                                                <span class="d-none">&#8457;</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-1 mx-1 temp">
+                                                <span class="d-none">Humidity:</span>
+                                                <span class="mr-1" id="weatherDisplayHumid3"></span>
+                                                <span class="d-none">&#37;</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-2 mx-2 weatherDisplay card text-wrap" id="secondforecastDisplay">
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-2 mx-1">
-                                        <span class="d-none mr-2"></span>
-                                        <span class="mr-1" id="weatherDisplayDate1"></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-3 mx-1">
-                                        <span class="d-none mr-2"></span>
-                                        <span class="mr-1" id="weatherDisplayIcon1"></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-1 mx-1 temp">
-                                        <span class="d-none">Temp:</span>
-                                        <span class="mr-1" id="weatherDisplayTemp1"></span>
-                                        <span class="d-none">&#8457;</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-1 mx-1 temp">
-                                        <span class="d-none">Humidity:</span>
-                                        <span class="mr-1" id="weatherDisplayHumid1"></span>
-                                        <span class="d-none">&#37;</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-2 mx-2 weatherDisplay card text-wrap" id="secondforecastDisplay">
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-2 mx-1">
-                                        <span class="d-none mr-2"></span>
-                                        <span class="mr-1" id="weatherDisplayDate2"></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-3 mx-1">
-                                        <span class="d-none mr-2"></span>
-                                        <span class="mr-1" id="weatherDisplayIcon2"></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-1 mx-1 temp">
-                                        <span class="d-none">Temp:</span>
-                                        <span class="mr-1" id="weatherDisplayTemp2"></span>
-                                        <span class="d-none">&#8457;</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-1 mx-1 temp">
-                                        <span class="d-none">Humidity:</span>
-                                        <span class="mr-1" id="weatherDisplayHumid2"></span>
-                                        <span class="d-none">&#37;</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-2 mx-2 weatherDisplay card text-wrap" id="secondforecastDisplay">
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-2 mx-1">
-                                        <span class="d-none mr-2"></span>
-                                        <span class="mr-1" id="weatherDisplayDate3"></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-3 mx-1">
-                                        <span class="d-none mr-2"></span>
-                                        <span class="mr-1" id="weatherDisplayIcon3"></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-1 mx-1 temp">
-                                        <span class="d-none">Temp:</span>
-                                        <span class="mr-1" id="weatherDisplayTemp3"></span>
-                                        <span class="d-none">&#8457;</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-1 mx-1 temp">
-                                        <span class="d-none">Humidity:</span>
-                                        <span class="mr-1" id="weatherDisplayHumid3"></span>
-                                        <span class="d-none">&#37;</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12  col-md-2 mx-2 weatherDisplay card text-wrap" id="secondforecastDisplay">
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-2 mx-1">
-                                        <span class="d-none mr-2"></span>
-                                        <span class="mr-1" id="weatherDisplayDate4"></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-3 mx-1">
-                                        <span class="d-none mr-2"></span>
-                                        <span class="mr-1" id="weatherDisplayIcon4"></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-1 mx-1 temp">
-                                        <span class="d-none">Temp:</span>
-                                        <span class="mr-1" id="weatherDisplayTemp4"></span>
-                                        <span class="d-none">&#8457;</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 d-flex my-1 mx-1 temp">
-                                        <span class="d-none">Humidity:</span>
-                                        <span class="mr-1" id="weatherDisplayHumid4"></span>
-                                        <span class="d-none">&#37;</span>
+                                    <div class="weatherDisplay card text-wrap" id="secondforecastDisplay">
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-2 mx-1">
+                                                <span class="d-none mr-2"></span>
+                                                <span class="mr-1" id="weatherDisplayDate4"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-3 mx-1">
+                                                <span class="d-none mr-2"></span>
+                                                <span class="mr-1" id="weatherDisplayIcon4"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-1 mx-1 temp">
+                                                <span class="d-none">Temp:</span>
+                                                <span class="mr-1" id="weatherDisplayTemp4"></span>
+                                                <span class="d-none">&#8457;</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex my-1 mx-1 temp">
+                                                <span class="d-none">Humidity:</span>
+                                                <span class="mr-1" id="weatherDisplayHumid4"></span>
+                                                <span class="d-none">&#37;</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
