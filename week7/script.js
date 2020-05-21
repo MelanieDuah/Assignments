@@ -28,7 +28,6 @@ function onWeatherInformationReturned(response, cityObject) {
 
   $("#currentTemp").html(temperatureInFahrenheit);
 
-
   var humid = response.current.humidity;
 
   $("#currentHumid").html(humid);

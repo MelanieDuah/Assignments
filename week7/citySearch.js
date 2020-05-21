@@ -77,7 +77,7 @@ function showSavedCities() {
     if (savedCities != null) {
         var savedCitiesArray = savedCities.split('|');
         for (var i = 0; i < savedCitiesArray.length; i++) {
-
+            
             var cityEntry = savedCitiesArray[i];
 
             if (cityEntry != '') {
