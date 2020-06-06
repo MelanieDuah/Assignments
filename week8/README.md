@@ -1,99 +1,15 @@
-# Unit 09 Node.js and ES6+ Homework: Good README Generator
 
-Create a command-line application that dynamically generates a README.md from a user's input. The application will be invoked with the following command:
-
-```sh
-node index.js
-```
-
-The user will be prompted for their GitHub username and other information pertaining to the project the README is for.
-
-The README will be populated with the following:
-
-* At least one badge
-* Project title
-* Description
-* Table of Contents
-* Installation
-* Usage
-* License
-* Contributing
-* Tests
-* Questions
-  * User GitHub profile picture
-  * User GitHub email
-
-Following the [common templates for user stories](https://en.wikipedia.org/wiki/User_story#Common_templates), we can frame this challenge as follows:
-
-```
-AS A developer
-
-I WANT a README generator
-
-SO THAT I can easily put together a good README for a new project
-```
-
-Refer to the [Good README guide](../../01-HTML-Git-CSS/04-Supplemental/Good-README-Guide/README.md).
-
-## Business Context
-
-When creating an open source project on GitHub, it is important to have a quality README with information about the app--what is the app for, how to use the app, how to install it, how to report issues, and how to make contributions so that other developers are more likely to use and contribute to the success of the project. A command-line application will allow for quick and easy generation of a project README to get started quickly. This will allow a project creator to spend more time working on finishing the project and less time creating a good README.
-
-## Minimum Requirements
-
-* Functional, deployed application.
-
-* GitHub repository with a unique name and a README describing project.
-
-* The generated README includes the following sections: 
-  * Title
-  * Description
-  * Table of Contents
-  * Installation
-  * Usage
-  * License
-  * Contributing
-  * Tests
-  * Questions
-
-* The generated README includes 1 badge that's specific to the repository.
-
-```
-GIVEN the developer has a GitHub profile and a repository
-
-WHEN prompted for the developer's GitHub username and repo specific information
-
-THEN a README for the repo is generated
-```
-- - -
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-* Your commit history allows you to revert your code base in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have more than 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* A video demonstrating the entirety of the app's functionality 
-
-* A generated README.md file for a project repo.
-
-* The URL of the GitHub repository
-
+# Project Title:Weather Dashboard
+# Description:A webpage that shows the current weather conditions for a specified city along with a 5 day forecast
+# Table of Contents:
+- [About The Weather Dashboard](#about) 
+- [Selecting A City](#selectingACity)  
+- [5 day Forecast](#forecast) 
+# Installation:This project does not require any installation. You can enter the provided url in your favorite browser's address bar and visit the weather dashboard 
+# Usage:You may enter a city to find out its current weather conditions. The dashboard will also display a 5-day weather forecast for the selected city. The previous 8 cities you have searched for will be saved so you can easily find their latest weather conditions
+# License:The project is released under the MIT license. In general the system is free to use for both commercial and non-commercial purposes. You may find more information about the MIT license by googling it.
+# Contributing:Contributions of new features and the enhancements of existing ones are welcome. You may clone this repository, add your changes and submit a pull request to one of the administrators of the repo. We advise that you maintain code coding practices and provide code comments as necessary
+# Tests:Tests are writting in Urchin. You can install Urchin with npn
+# Questions:You may submit any questions you have by posting an issue
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]
+    
