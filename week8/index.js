@@ -55,12 +55,12 @@ inquirer.prompt([
 
         let badgeUrl = '';
         if (answer.license === 'ISC') {
-            badgeUrl = '![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
+            badgeUrl = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
         } else if (answer.license === 'Mozilla') {
-            badgeUrl = '![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)';
+            badgeUrl = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
         } else {
             (answer.license === 'Perl')
-            badgeUrl = '![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)'
+            badgeUrl = '[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)'
         }
 
         const readmeString = `
