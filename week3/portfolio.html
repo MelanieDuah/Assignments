@@ -2,66 +2,100 @@
 <html lang="en">
 
 <head>
+    <script src="https://use.fontawesome.com/8200558ec1.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>welcome</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./asset/style.css">
 </head>
 
-<body class="portfolio-body">
-    <div class="container-fliud maincontainer">
-
+<body>
+    <div class="container-fliud h-100">
         <header class="row">
-            <div class="col-xs-12 col-sm-3 brandcontainer">
-                <div class="row brand-inner-row">
-                    <div class="d-none d-sm-block col-sm-2 leftspace"></div>
-                    <div class="col-xs-12 col-sm-10 navbar-name">Melanie Agyemang Duah</div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-9 d-flex justify-content-center justify-content-sm-end">
-                <nav class="navbar">
-                    <a class="nav-item nav-link active" href="./index.html">About</a>
-                    <a class="nav-item nav-link" href="./portfolio.html">Portfolio</a>
-                    <a class="nav-item nav-link" href="./contact.html">Contact</a>
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                        aria-controls="navbarToggler">
+                        <span class="navbar-toggler-icon navbar-dark"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarToggler">
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link active text-light" href="./index.html">Home</a>
+                            <a class="nav-item nav-link active text-light" href="./aboutme.html">About</a>
+                            <a class="nav-item nav-link active text-light" href="./portfolio.html">Portfolio</a>
+                            <a class="nav-item nav-link active text-light" href="./contact.html">Contact</a>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </header>
+        <article class="row h-100">
+            <div class="col-xs-12 col-md-4">
+                <div class="card h-100 w-100 shadow-sm ml-1 mt-1">
+                    <div>
+                        <img class="img-fluid aboutmeimg h-md-50 h-xs-100" src="./images/image7.jpg" />
+                        <div class="ml-3">
 
-        <div class="row portfolio-maincontent maincontent pt-sm-2 pl-sm-5 pl-md-5 p-4">
-            <div class="col-12 maincontent-column row">
-                <div class="col-12 portfolio-whitebox pb-2">
-                    <span class="h3">Portfolio</span>
+                            <div>
+                                <h3>Find me</h3>
+                            </div>
+                            <div class="contact ml-3">
+                                <a class="mr-4" href="https://www.facebook.com/melanie.duah"><i
+                                        class="fa fa-facebook-square"></i></a>
+                                <a class="mr-4" href="https://www.instagram.com/iam_melanie/"><i
+                                        class="fa fa-instagram"></i></a>
+                                <a href="melanieduah@gmail.com"><i class="fa fa-envelope-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-8 h-100">
+                <div class="card h-100 shadow-sm mr-1 my-1">
+                    <span class="h3 ml-3 mr-3 mt-2">Portfolio</span>
                     <hr>
-                    <div class="col-12 row">
+                    <div class="card-body col-12 row ml-3 mr-3">
                         <div class="col-xs-12 col-sm-4">
-                            <img class="img-thumbnail portfolio-img img-fluid" alt="sunset love" src="./images/image1.jpg">
-                        </div> 
-                        <div class="col-xs-12 col-sm-4">
-                            <img class="img-thumbnail portfolio-img img-fluid" alt="flower love" src="./images/image2.jpg">
-                        </div> 
-                         <div class="col-xs-12 col-sm-4">
-                            <img class="img-thumbnail portfolio-img img-fluid" alt="book love" src="./images/image3.jpg">
+                            <img class="img-thumbnail portfolio-img img-fluid" alt="sunset love"
+                                src="./images/image1.jpg">
                         </div>
                         <div class="col-xs-12 col-sm-4">
-                            <img class="img-thumbnail portfolio-img img-fluid" alt="on the edge" src="./images/image4.jpg">
-                        </div> 
+                            <img class="img-thumbnail portfolio-img img-fluid" alt="flower love"
+                                src="./images/image2.jpg">
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <img class="img-thumbnail portfolio-img img-fluid" alt="book love"
+                                src="./images/image3.jpg">
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <img class="img-thumbnail portfolio-img img-fluid" alt="on the edge"
+                                src="./images/image4.jpg">
+                        </div>
                         <div class="col-xs-12 col-sm-4">
                             <img class="img-thumbnail portfolio-img img-fluid" alt="dinasour" src="./images/image5.jpg">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <footer class="row portfolio-footer">
-            <div class="col-md-12 bg-dark">
-                <div class="col-md-12 ending">
-                    <span class="h5 text-white">&copy; All rights reserved </span>
+            <footer class="row fixed-bottom">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <div class="ending">
+                        <span class="h5 text-light">&copy; All rights reserved </span>
+                    </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
