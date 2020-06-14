@@ -1,8 +1,8 @@
 
-#Title
+# Title
   Team Generator
 
-#Table Of Contents
+# Table Of Contents
   - [Title](#Title)
   - [Description](#Description)
   - [Installation](#Installation)
