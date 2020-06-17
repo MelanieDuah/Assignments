@@ -53,23 +53,29 @@ app.post('/api/notes', (req, res, next) => {
 
 });
 
-app.delete('/api/notes/:id', (req, res) => {
-   
-   const id = req.params.id;
-   let v = {
-      id : req.params.id
-   };
+app.delete('/api/notes/:id', (req, res, next) => {
 
+   let id = req.params.id;
+ 
    fs.readFile(path.join(__dirname, '/db/db.json'), 'utf8', (err, existingNotesJson) => {
       if (err) throw err;
 
       let arrayOfNotes = [];
 
-      if (existingNotesJson) {
-         arrayOfNotes = JSON.parse(existingNotesJson);
-      }
+      if(existingNotesJson)
+        arrayOfNotes = JSON.parse(existingNotesJson);
+
+      arrayOfNotes = arrayOfNotes.filter(note => note.id != id);
+
+      fs.writeFile(path.join(__dirname, "/db/db.json"), JSON.stringify(arrayOfNotes, null, '\t'), (err) => {
+         if (err) throw err;
+      });
+
+      res.end();
    });
+
 });
+
 
 
 app.listen(port, () => console.log(`We're live on ${port}`));
