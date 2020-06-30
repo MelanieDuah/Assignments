@@ -34,6 +34,25 @@ class EmployeeBusiness {
         return this.employeeDataAccess.getAllRoles();
     }
 
+    getEmployeesByDepartment(department){
+        return this.employeeDataAccess.getEmployeesByDepartment(department);
+    }
+    
+    getEmployeesByManager(manager){
+        return this.employeeDataAccess.getEmployeesByManager(manager);
+    }
+    
+    getAllManagers(){
+        return this.employeeDataAccess.getAllManagers();
+    }
+
+    updateEmployeeRole(employee){
+        this.employeeDataAccess.updateEmployeeRole(employee);
+    }
+    
+    updateEmployeeManager(employee){
+        this.employeeDataAccess.updateEmployeeManager(employee);
+    }
 }
 
 module.exports = EmployeeBusiness;

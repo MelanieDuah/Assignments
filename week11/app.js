@@ -6,15 +6,33 @@ let business = new EmployeeBusiness();
 
 async function showMainPrompt() {
   let answers = await inquirer.prompt(questions.mainQuestion);
-  if (answers.main == 'Add role') {
-    promptAddRole();
-  } else if (answers.main == 'Add department') {
-    promptAddDepartment();
-  }
-  else if (answers.main == 'Add employee') {
-    promptAddEmployee();
-  }
 
+  switch (answers.main) {
+    case 'addDepartment':
+      promptAddDepartment();
+      break;
+    case 'addRole':
+      promptAddRole();
+      break;
+    case 'addEmployee':
+      promptAddEmployee();
+      break;
+    case 'viewAllEmployees':
+      viewAllEmployees();
+      break;
+    case 'viewEmployeesByDepartment':
+      viewEmployeesByDepartment();
+      break;
+    case 'viewEmployeesByManager':
+      viewEmployeesByManager();
+      break;
+    case 'updateEmployeeRole':
+      updateEmployeeRole();
+      break; 
+      case 'updateEmployeeManager':
+        updateEmployeeManager();
+      break;
+  }
 }
 
 showMainPrompt();
@@ -29,7 +47,7 @@ async function promptAddRole() {
   let departments = await business.getAllDepartments();
 
   let choices = [];
-  for (department of departments) {
+  for (let department of departments) {
     let choice = {
       name: department.getName(),
       value: department
@@ -50,7 +68,7 @@ async function promptAddEmployee() {
   let roles = await business.getAllRoles();
 
   let choices = [];
-  for (role of roles) {
+  for (let role of roles) {
     let choice = {
       name: role.getName(),
       value: role
@@ -64,8 +82,8 @@ async function promptAddEmployee() {
   //Get employee list to show as options for selecting employee manager
   let employees = await business.getAllEmployees();
 
-  let choices = [];
-  for (manager of employees) {
+  choices = [];
+  for (let manager of employees) {
     let choice = {
       name: manager.getName(),
       value: manager
@@ -82,3 +100,142 @@ async function promptAddEmployee() {
 
   showMainPrompt();
 }
+
+async function viewAllEmployees() {
+
+  let employees = await business.getAllEmployees();
+
+  for (let employee of employees) {
+    let manager = null;
+    if (employee.getManager())
+      manager = employee.getManager().getName();
+    console.log(` ${employee.getName()}  ${employee.getRole().getDepartment().getName()}  ${employee.getRole().getSalary()}  ${manager}`);
+  }
+  showMainPrompt();
+}
+
+async function viewEmployeesByDepartment() {
+  let departments = await business.getAllDepartments();
+
+  let choices = [];
+  for (let department of departments) {
+    let choice = {
+      name: department.getName(),
+      value: department
+    }
+    choices.push(choice);
+  }
+  
+  questions.selectDepartment[0].choices = choices;
+
+  let answer = await inquirer.prompt(questions.selectDepartment);
+  let employees = await business.getEmployeesByDepartment(answer.department);
+
+  for (let employee of employees)
+    console.log(`${employee.getName()}`);
+
+  showMainPrompt();
+}
+
+async function viewEmployeesByManager() {
+  let managers = await business.getAllManagers();
+
+  let choices = [];
+  for (let manager of managers) {
+    let choice = {
+      name: manager.getName(),
+      value: manager
+    }
+    choices.push(choice);
+  }
+
+  questions.selectManager[0].choices = choices;
+
+  let answer = await inquirer.prompt(questions.selectManager);
+  let employees = await business.getEmployeesByManager(answer.manager);
+
+  for (let employee of employees)
+    console.log(`${employee.getName()}`);
+
+  showMainPrompt();
+}
+
+async function updateEmployeeRole() {
+  let employees = await business.getAllEmployees();
+
+  let choices = [];
+  for (let employee of employees) {
+    let choice = {
+      name: employee.getName(),
+      value: employee
+    }
+    choices.push(choice);
+  }
+
+  questions.selectEmployee[0].choices = choices;
+
+  let answer = await inquirer.prompt(questions.selectEmployee);
+  let employee = answer.employee;
+
+  let roles = await business.getAllRoles();
+
+  choices = [];
+  for (let role of roles) {
+    let choice = {
+      name: role.getName(),
+      value: role
+    }
+    choices.push(choice);
+  }
+  questions.selectRole[0].choices = choices;
+
+  answer = await inquirer.prompt(questions.selectRole);
+  let role = answer.role;
+
+  employee.setRole(role);
+
+  business.updateEmployeeRole(employee);
+
+  showMainPrompt();
+}
+
+async function updateEmployeeManager() {
+  let employees = await business.getAllEmployees();
+
+  let choices = [];
+  for (let employee of employees) {
+    let choice = {
+      name: employee.getName(),
+      value: employee
+    }
+    choices.push(choice);
+  }
+
+  questions.selectEmployee[0].choices = choices;
+
+  let answer = await inquirer.prompt(questions.selectEmployee);
+  let employee = answer.employee;
+
+  let managers = await business.getAllManagers();
+
+ choices = [];
+  for (let manager of managers) {
+    let choice = {
+      name: manager.getName(),
+      value: manager
+    }
+    choices.push(choice);
+  }
+
+  questions.selectManager[0].choices = choices;
+
+  answer = await inquirer.prompt(questions.selectManager);
+  let manager = answer.manager;
+
+  employee.setManager(manager);
+
+  business.updateEmployeeManager(employee);
+
+  showMainPrompt();
+}
+

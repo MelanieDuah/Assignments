@@ -19,15 +19,22 @@ class Employee {
         return this.role;
     }
 
-    getManager(){
-      return this.manager;
+    setRole(role) {
+        this.role = role;
     }
 
-    getId(){
+    getManager() {
+        return this.manager;
+    }
+    setManager(manager) {
+        this.manager = manager;
+    }
+    
+    getId() {
         return this.id;
     }
 
-    getName(){
+    getName() {
         return `${this.firstName} ${this.lastName}`;
     }
 }
